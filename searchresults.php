@@ -8,6 +8,7 @@ To do:
 
 <?php
 
+require_once 'includes/header.php';
 require_once 'Restaurants.php';
 
 
@@ -54,10 +55,10 @@ if(isset($_POST['search__city'])){
 	//$searchdata is a json_decode object
 	
 	foreach($searchdata as $item){
-		echo '<div class="col-lg-4 mb-2 line-content"> Name: ' . $item['restaurant']['name'];
-		echo '<br>Address: ' . $item['restaurant']['location']['address'];
-		echo '<br>City: ' . $item['restaurant']['location']['city'];
-		echo '<br>User rating: ' . $item['restaurant']['user_rating']['aggregate_rating'];
+		echo '<div class="col-lg-4 mb-2 line-content">' . $item['restaurant']['name'];
+		// echo '<br>Address: ' . $item['restaurant']['location']['address'];
+		// echo '<br>City: ' . $item['restaurant']['location']['city'];
+		// echo '<br>User rating: ' . $item['restaurant']['user_rating']['aggregate_rating'];
 		echo '<br><img src=' .
 		$item['restaurant']['featured_image'] .
 		' width=200 height=auto>';

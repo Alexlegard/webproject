@@ -14,7 +14,6 @@ $passErr = $confirmPassErr = $fNameErr = $lNameErr = $emailErr = $email = "";
         if (empty($_POST["confirm_password"])) {
             $confirmPassErr = "Confirm Password is required";
         } else if($_POST['password'] != $_POST['confirm_password']) {
-            // echo '';
             $passErr = '<div class="alert alert-danger mt-2">
                         <strong>Error!</strong> Password Does Not Match
                     </div>';
@@ -100,7 +99,7 @@ $passErr = $confirmPassErr = $fNameErr = $lNameErr = $emailErr = $email = "";
                 <div class="intro-heading text-uppercase"><span style="font-family: 'Kaushan Script', cursive;">Find grub!</span></div>
                 <div class="d-flex flex-column justify-content-center" id="login-box" style="background-color: #434141;">
                     <div class="login-box-header" style="background-color: #434141;">
-                        <h4 style="color: rgb(255,255,255);margin-bottom: 0px;font-weight: 400;font-size: 27px;"><img src="assets/img/fmd.png" width="50%"></h4>
+                        <h4 style="color: rgb(255,255,255);margin-bottom: 0px;font-weight: 400;font-size: 27px;"><img src="assets/img/fg.png" width="50%"></h4>
                     </div>
 
                     <div class="d-flex flex-row align-items-center login-box-seperator-container">

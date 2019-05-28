@@ -52,7 +52,7 @@ if(isset($_POST['login'])){
                 <div class="intro-heading text-uppercase"><span style="font-family: 'Kaushan Script', cursive;">Find Grub!</span></div>
                 <div class="d-flex flex-column justify-content-center" id="login-box" style="background-color: #434141;">
                     <div class="login-box-header" style="background-color: #434141;">
-                        <h4 style="color: rgb(255,255,255);margin-bottom: 0px;font-weight: 400;font-size: 27px;"><img src="assets/img/fmd.png" width="50%"></h4>
+                        <h4 style="color: rgb(255,255,255);margin-bottom: 0px;font-weight: 400;font-size: 27px;"><img src="assets/img/fg.png" width="50%"></h4>
                     </div>
                     <div class="login-box-content" style="background-color: #434141;">
                         <div class="fb-login box-shadow"><a class="d-flex flex-row align-items-center social-login-link" href="#"><i class="fa fa-facebook" style="margin-left:0px;padding-right:20px;padding-left:22px;width:56px;"></i>Login with Facebook</a></div>

@@ -16,7 +16,7 @@
 
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
-        <div class="container"><a class="navbar-brand" id="brand-logo" href="#" style="background-image: url(&quot;assets/img/fmd.png&quot;);width: 70px;height: 80px;"> </a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
+        <div class="container"><a class="navbar-brand" id="brand-logo" href="#" style="background-image: url(&quot;assets/img/fg.png&quot;);width: 80px;height: 80px;"> </a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
                 type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto text-uppercase">

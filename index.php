@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>Need Grub!</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
@@ -15,8 +15,8 @@
 </head>
 
 <body id="page-top">
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
-        <div class="container"><a class="navbar-brand" id="brand-logo" href="#" style="background-image: url(&quot;assets/img/fg.png&quot;);width: 80px;height: 80px;"> </a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark" id="mainNav">
+        <div class="container"><a class="navbar-brand" id="brand-logo" href="#" style="background-image: url(&quot;assets/img/logo.png&quot;);width: 80px;height: 80px;"> </a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
                 type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto text-uppercase">
@@ -55,7 +55,7 @@
             </div>
         </div>
     </header>
-    <footer>
+    <footer class="bg-dark" id="mainNav">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-lg-12">
@@ -68,7 +68,7 @@
                         <li class="list-inline-item"><a href="#"><i class="fa fa-github"></i></a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-lg-12" style="padding: 30px;"><span class="copyright">Copyright&nbsp;© Find My Deals 2019</span></div>
+                <div class="col-md-4 col-lg-12" style="padding: 30px;"><span class="copyright" style="color: white;">Copyright&nbsp;© Find My Deals 2019</span></div>
             </div>
         </div>
     </footer>

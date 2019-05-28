@@ -31,9 +31,28 @@
             <div class="intro-text">
                 <div class="intro-lead-in"><span>Hungry?</span></div>
                 <div class="intro-heading text-uppercase"><span style="font-family: 'Kaushan Script', cursive;">Find Grub!</span></div>
-                <div class="row">
-                    <div class="col"><input type="search" style="width: 487px;height: 43px;margin: 40px;padding: 0px;"></div>
-                </div><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="#services">search</a></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <form action="searchresults.php" method="post" >
+                    <div class="form-group" id="city">
+                        <!-- <label for="city">City</label> -->
+                        <input class="form-control" name="search__city" type="text" placeholder="Enter City">
+                        <span class="show-error">
+						<!-- < echo $cityNameErr; ></span> -->
+                    </div>
+                    <div class="form-group" id="city">
+                        <!-- <label for="restaurant">Restaurants</label> -->
+                        <input class="form-control" name="search__request" type="text" placeholder="Look for Restaurants">
+                        <span class="show-error">
+						<!-- < echo $restaurantErr; ?></span> -->
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" name="search__button" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" >Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </header>
     <footer>

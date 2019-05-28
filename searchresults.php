@@ -7,7 +7,10 @@ To do:
 -->
 
 <?php
+
+require_once "includes/header.php";
 require_once 'Restaurants.php';
+
 
 if(isset($_POST['search__city'])){
 	
@@ -39,17 +42,12 @@ if(isset($_POST['search__city'])){
 	//print_r($searchdata);
 }?>
 
-<!DOCTYPE html>
+    <!-- <header class="masthead" style="background-image:url('assets/img/header-bg.gif');"> -->
 
-<html lang="en">
-	<head>
-		<title>Searching for Grub</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-	</head>
-	
 	<body>
+	
+	<div class="container">
+    <div class="row mb-4 mt-2">
 		<h1>Searching for Restaurants in <?php echo $city; ?></h1>
 	</body>
 	
@@ -57,18 +55,18 @@ if(isset($_POST['search__city'])){
 	//$searchdata is a json_decode object
 	
 	foreach($searchdata as $item){
-		echo 'Name: ' . $item['restaurant']['name'];
+		echo '<div class="col-lg-4 mb-2 line-content"> Name: ' . $item['restaurant']['name'];
 		echo '<br>Address: ' . $item['restaurant']['location']['address'];
 		echo '<br>City: ' . $item['restaurant']['location']['city'];
 		echo '<br>User rating: ' . $item['restaurant']['user_rating']['aggregate_rating'];
 		echo '<br><img src=' .
 		$item['restaurant']['featured_image'] .
 		' width=200 height=auto>';
-		echo '<br><br><br>';
+		echo '<br><br><br></div>';
 		
 	}
-	
-	
-	
 	?>
+	
+    </div>
+    </div>
 </html>

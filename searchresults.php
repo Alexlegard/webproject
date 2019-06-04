@@ -68,5 +68,12 @@ if(isset($_POST['search__city'])){
 	?>
 	
     </div>
-    </div>
+	</div>
+	
+	<?php
+
+		require_once 'includes/footer.php';
+		
+	?>
 </html>
+

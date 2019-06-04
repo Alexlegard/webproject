@@ -1,5 +1,4 @@
-
-    <footer class="bg-dark" id="mainNav">
+<footer class="bg-dark" id="mainNav">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-lg-12">
@@ -21,5 +20,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="assets/js/script.min.js"></script>
 </body>
-
-</html>

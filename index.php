@@ -55,10 +55,12 @@
             </div>
         </div>
     </header>
-
-
-    
+   
+	
 	<?php
 
 require_once 'includes/footer.php';
+
 ?>
+
+</html>

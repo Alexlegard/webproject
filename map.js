@@ -11,7 +11,6 @@ function initializeMap(){
 		//lat: 43.6550972222,
 		//lng: -79.3864055556
 	};
-	alert("lat " + restaurant.lat + " lng " + restaurant.lng);
 	
 	var restaurantMap = new google.maps.Map(
 		document.getElementById('map'),
@@ -20,6 +19,6 @@ function initializeMap(){
 			map: restaurantMap
 		}
 	);
-	var map = new google.maps.Map(document.getElementById('map'), {zoom: 14, center: restaurant});
+	var map = new google.maps.Map(document.getElementById('map'), {zoom: 16, center: restaurant});
 	var marker = new google.maps.Marker({ position:restaurant, map:map });
 }

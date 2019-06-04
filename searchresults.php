@@ -63,9 +63,10 @@ if(isset($_POST['search__city'])){
 	<body>
 	<div class="container">
 		<div class="row mb-4 mt-2">
-			<h1>Searching for Restaurants in <?php echo $city; ?></h1>
-			
-			<!--Pagination-->
+			<h1>Searching for Restaurants in <?php echo $city; ?></h1><br>
+
+			<div>
+					<!--Pagination-->
 			<form method="post" action="searchresults.php">
 				<?php echo "Page " . $page; ?>
 				<input type="hidden" name="search__city" value="<?php echo $city; ?>">
@@ -78,11 +79,13 @@ if(isset($_POST['search__city'])){
 				<!--<input type="submit" name="page" value="<?php //if(isset($_GET['page'])){ $page=$_GET['page']-1; echo $page; }else{ echo "0"; } ?>">
 				<input type="submit" name="page" value="<?php //if(isset($_GET['page'])){ $page=$_GET['page']+1; echo $page; }else{ echo "2"; } ?>">-->
 			</form>
+			</div>
+			
 		
-<<<<<<< HEAD
 		
 		
-		<img src=>
+		
+		<!-- <img src=> -->
 		<?php
 		//$searchdata is a json_decode object
 		
@@ -103,21 +106,22 @@ if(isset($_POST['search__city'])){
 		?>
 		
 		</div>
-    </div>
-	</body>
-</html>
-=======
-	}
-	?>
-	
-    </div>
+			<!--Pagination-->
+			<form method="post" action="searchresults.php">
+				<?php echo "Page " . $page; ?>
+				<input type="hidden" name="search__city" value="<?php echo $city; ?>">
+				<input type="hidden" name="page" value="<?php echo $page; ?>">
+				<input type="submit" name="prev" value="Prev">
+				<input type="submit" name="next" value="Next">
+				<!--
+				<input type="hidden" name="city" value="<?php //echo $_POST['search__city']; ?>">
+				<!--<input type="hidden" name="page" value="<?php //if(isset($_GET['page'])){ echo $_GET['page']; }else { echo "1"; } ?>">-->
+				<!--<input type="submit" name="page" value="<?php //if(isset($_GET['page'])){ $page=$_GET['page']-1; echo $page; }else{ echo "0"; } ?>">
+				<input type="submit" name="page" value="<?php //if(isset($_GET['page'])){ $page=$_GET['page']+1; echo $page; }else{ echo "2"; } ?>">-->
+			</form>
 	</div>
 	
 	<?php
 
-		require_once 'includes/footer.php';
-		
-	?>
-</html>
-
->>>>>>> f05fd8c487cb9e7c326bdc3b3210cb187d158b4e
+require_once 'includes/footer.php';
+?>

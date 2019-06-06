@@ -68,7 +68,7 @@ class Restaurants
 		$query = 'https://developers.zomato.com/api/v2.1/locations?query='.$c;
 	}
 	
-	public function getSearchData($entid, $nr, $pg){
+	public function getSearchData($entid, $nr, $pg, $q){
 		//need entity id
 		//numresults
 		//page
@@ -81,6 +81,7 @@ class Restaurants
 		curl_setopt($curl, CURLOPT_URL, "https://developers.zomato.com/api/v2.1/search?" .
 		"entity_id=" . $entid .
 		"&entity_type=city" .
+		"&q=" . $q .
 		"&start=" . $offset .
 		"&count=" . $nr);
 		

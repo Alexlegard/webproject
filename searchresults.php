@@ -5,8 +5,12 @@ To do:
 -Search the restaurants according to relevance using $_POST['search__query']
 -Create a restaurant info page
 -->
-
+<!--EXAMPLE QUERY STRING FOR CHINESE IN TORONTO
+https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city&q=Chinese&count=12
+-->
 <?php
+
+
 
 require_once 'includes/header.php';
 require_once 'Restaurants.php';
@@ -43,11 +47,9 @@ if(isset($_POST['search__city'])){
 	
 	//Finally create the search data and put it in a variable
 	$searchquery = $restaurants->getDebugSearchQuery($entityid, $nr, $page);//Debug
-	$searchdata = $restaurants->getSearchData($entityid, $nr, $page);
+	$searchdata = $restaurants->getSearchData($entityid, $nr, $page, $query);
 	$searchdata = json_decode($searchdata, true);
 	$searchdata = $searchdata['restaurants'];
-	
-	echo $searchquery;
 	
 } else {
 	header("Location: index.php");

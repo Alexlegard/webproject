@@ -11,13 +11,8 @@ Toronto entity id: 89
 class Restaurants
 {
 	//Search and location data are set as json
-	public $searchdata;
-	public $locationdata;
 	private $apikey;
 	private $url;
-	private $entityid;
-	private $numresults;
-	private $page;
 	
 	public function __construct() {
 		$this->apikey = 'a320bb8bf44e39927b15ff6510601376';
@@ -54,18 +49,40 @@ class Restaurants
 		$this->page = $p;
 	}
 	
-	public function setSearchData(){
+	public function getDebugSearchQuery($entid, $nr, $pg){
+		$offset = $pg-1;
+		$offset = $offset * $nr;
+		
+		$query = "https://developers.zomato.com/api/v2.1/search?" .
+		"entity_id=" . $entid .
+		"&entity_type-city" .
+		"&start=" . $offset .
+		"&count=" . $nr;
+		
+		return $query;
+	}
+	
+	public function getDebugLocationQuery($c){
+		//$query = 'https://developers.zomato.com/api/v2.1/locations?query='.$c;
+		
+		$query = 'https://developers.zomato.com/api/v2.1/locations?query='.$c;
+	}
+	
+	public function getSearchData($entid, $nr, $pg){
+		//need entity id
+		//numresults
+		//page
 		
 		$curl = curl_init();
 		
 		//Set request URL
-		$offset = $this->page - 1;
-		$offset = $offset * $this->numresults;
+		$offset = $pg - 1;
+		$offset = $offset * $nr;
 		curl_setopt($curl, CURLOPT_URL, "https://developers.zomato.com/api/v2.1/search?" .
-		"entity_id=" . $this->entityid .
+		"entity_id=" . $entid .
 		"&entity_type=city" .
 		"&start=" . $offset .
-		"&count=" . $this->numresults);
+		"&count=" . $nr);
 		
 		//Credit to user trueicecold
 		//https://stackoverflow.com/questions/26495065/php-using-api-key-in-curl-get-call
@@ -85,11 +102,10 @@ class Restaurants
 		//Close connection to save system resources
 		curl_close($curl);
 		
-		//$this->data = $output;
-		$this->searchdata = $output;
+		return $output;
 	}
 	
-	public function setLocationData($c){
+	public function getLocationData($c){
 		//Example string:
 		//https://developers.zomato.com/api/v2.1/locations?query=Toronto
 		$query = 'https://developers.zomato.com/api/v2.1/locations?query='.$c;
@@ -107,6 +123,7 @@ class Restaurants
 		
 		curl_close($curl);
 		
+		return $output;
 		$this->locationdata = $output;
 	}
 	

@@ -4,11 +4,16 @@
 
 require_once "includes/header.php";
 require_once "Restaurants.php";
+require_once "database.php";
+require_once "Comment.php";
+
+$db = Database::getDb();
+$comment = new Comment();
 
 if(isset($_POST['resid'])){
 	//echo 'resid is ' . $_POST['resid'];
 	$id = $_POST['resid'];
-	
+	echo date('m/d/Y h:i:s');
 	
 	$restaurants = new Restaurants();
 	$restaurantdata = $restaurants->getRestaurantById($id);
@@ -22,6 +27,35 @@ if(isset($_POST['resid'])){
 	
 } else {
 	header("Location: index.php");
+}
+
+//If comment submit form was sent
+if(isset($_POST['name'])){
+	
+	$name = $_POST['name'];
+	$content = $_POST['content'];
+	$emptyvalerror = false;
+	
+	//Make sure name and content are not empty or null
+	if(validate($_POST['name'])){
+		$emptyvalerror = 'Name is required.';
+	} else if(validate($_POST['content'])) {
+		$emptyvalerror = 'Content is required.';
+	} else {
+		//Add the comment to the db
+		//restaurant id: $id
+		$name = $_POST['name'];
+		$content = $_POST['content'];
+		$count = $comment->addComment($db, $id, $name, $content);
+		
+	}
+}
+
+function validate($val){
+	if(   ($val=='')   ||   ($val==null)   ){
+		return true;//Empty or null
+	}
+	return false;//Not empty or null
 }
 ?>
 
@@ -39,6 +73,7 @@ if(isset($_POST['resid'])){
 	<div id="hidden__latitude" style="display:none"><?php echo $latitude; ?></div>
 	<div id="hidden__longitude" style="display:none"><?php echo $longitude; ?></div>
 	
+	<p>ID: <?php echo $id; ?></p>
 	<p>Restaurant title: <?php echo $restaurantdata['name']; ?></p>
 	<img src="<?php echo $restaurantdata['featured_image']; ?>" width="200" height="auto">
 	<p>Address: <?php echo $restaurantdata['location']['address']; ?></p>
@@ -47,11 +82,14 @@ if(isset($_POST['resid'])){
 	<p>Cuisine: <?php echo $restaurantdata['cuisines']; ?></p>
 	<p>Cost for two: <?php echo $restaurantdata['average_cost_for_two']; ?></p>
 	<p>User rating: <?php echo $restaurantdata['user_rating']['aggregate_rating'] ?></p>
-	<a href="<?php echo $restaurantdata['url']; ?>">Link to <?php echo $restaurantdata['name']; ?></a>
 	
-	<?php
-	$directionsurl = "https://www.google.com/maps/dir/" . $latitude . "," . $longitude;
-	?>
+	<div>
+	<a href="<?php echo $restaurantdata['url']; ?>">Link to <?php echo $restaurantdata['name']; ?></a>
+	</div>
+	
+	<div><?php
+	$directionsurl = "https://www.google.com/maps/dir//" . $latitude . "," . $longitude;
+	?></div>
 	<a href="<?php echo $directionsurl; ?>">Get Directions</a>
 	
 	<script type="text/javascript" src="map.js"></script>
@@ -60,4 +98,40 @@ if(isset($_POST['resid'])){
 	
 	<script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyCGkcqoinVP-fb9qTDLA6y1Rizy3SLtmKo&callback=initializeMap">
 	</script>
+	
+	<!----COMMENT FEATURE---->
+	<?php
+	//$db = Database::getDb();
+	$comments = $comment->getAllComments($db, $id);
+	echo '<h2>' . count($comments) . ' Comments</h2>';
+	//Submit a comment
+	if(isset($emptyvalerror)){ 
+		echo '<div id="error" style="color:red;">' . $emptyvalerror . '</div>';
+	}?>
+	
+	<form action="restaurant.php" method="post">
+		<input type="hidden" name="resid" value="<?php echo $id; ?>">
+		<div>
+			<label for="name">Your name: </label>
+			<input type="text" name="name">
+		</div>
+		<div>
+			<label for="content">Your comment:</label>
+			<input type="text" name="content">
+		</div>
+		<div>
+			<input type="submit" name="submit" value="OK">
+		</div>
+	</form>
+	
+	<?php
+	//List of comments
+	foreach($comments as $c){
+		echo '<div class="comment" style="border:1px solid black;">';
+		echo '<div class="comment__nametime">' .
+		$c->username . ' | ' . $c->comment_time . '</div>';
+		echo '<div class="comment__content">' . $c->comment_content;
+		echo '</div></div>';
+	}
+	?>
 </body>

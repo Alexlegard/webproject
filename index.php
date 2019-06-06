@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group" id="city">
                         <!-- <label for="restaurant">Restaurants</label> -->
-                        <input class="form-control" name="search__query" type="text" placeholder="Look for Restaurants">
+                        <input class="form-control" name="search__query" type="text" placeholder="I want.....">
                         <span class="show-error">
 						<!-- < echo $restaurantErr; ?></span> -->
                     </div>

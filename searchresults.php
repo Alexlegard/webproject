@@ -88,7 +88,7 @@ if(isset($_POST['search__city'])){
 			//echo '<p>' . $item['restaurant']['featured_image'];
 			echo '<form method="post" action="restaurant.php">';
 			echo '<input type="hidden" name="resid" value="' . $resid . '">';
-			echo '<label>' . $item['restaurant']['name'] . '</label>';
+			echo '<label>' . $item['restaurant']['name'] . '</label><br>';
 			echo '<input type="image" src="'.$imageurl.'" width="200" height="auto" onFocus="submit" name="restaurant_img" value="ok">';
 			echo '</form></div>';
 			

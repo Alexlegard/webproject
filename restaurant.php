@@ -73,12 +73,12 @@ function validate($val){
 	<div id="hidden__latitude" style="display:none"><?php echo $latitude; ?></div>
 	<div id="hidden__longitude" style="display:none"><?php echo $longitude; ?></div>
 	
-	<p>ID: <?php echo $id; ?></p>
-	<p>Restaurant title: <?php echo $restaurantdata['name']; ?></p>
-	<img src="<?php echo $restaurantdata['featured_image']; ?>" width="200" height="auto">
+	<!--<p>ID: <?php echo $id; ?></p>-->
+	<p>Welcome to: <?php echo $restaurantdata['name']; ?></p>
+	<img src="<?php echo $restaurantdata['featured_image']; ?>" width="700" height="auto">
 	<p>Address: <?php echo $restaurantdata['location']['address']; ?></p>
-	<p>Lat: <?php echo $restaurantdata ['location']['latitude']; ?></p>
-	<p>Lon: <?php echo $restaurantdata ['location']['longitude']; ?></p>
+	<!--<p>Lat: <?php echo $restaurantdata ['location']['latitude']; ?></p>
+	<p>Lon: <?php echo $restaurantdata ['location']['longitude']; ?></p>-->
 	<p>Cuisine: <?php echo $restaurantdata['cuisines']; ?></p>
 	<p>Cost for two: <?php echo $restaurantdata['average_cost_for_two']; ?></p>
 	<p>User rating: <?php echo $restaurantdata['user_rating']['aggregate_rating'] ?></p>

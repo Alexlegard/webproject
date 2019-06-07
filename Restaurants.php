@@ -29,26 +29,6 @@ class Restaurants
 		return $this->apikey;
 	}
 	
-	public function getEntityId(){
-		return $this->entityid;
-	}
-	
-	public function getNumResults(){
-		return $this->numresults;
-	}
-	
-	public function setEntityId($id){
-		$this->entityid = $id;
-	}
-	
-	public function setNumResults($n){
-		$this->numresults = $n;
-	}
-	
-	public function setPage($p){
-		$this->page = $p;
-	}
-	
 	public function getDebugSearchQuery($entid, $nr, $pg){
 		$offset = $pg-1;
 		$offset = $offset * $nr;

@@ -15,11 +15,11 @@ https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city&q=Ch
 require_once 'includes/header.php';
 require_once 'Restaurants.php';
 
-if(isset($_GET['city'])){
-	$city = $_GET['city'];
-}
-
 if(isset($_POST['search__city'])){
+	
+	if(validate($_POST['search__city'])){
+		header("Location: index.php");
+	}
 	
 	if(isset($_POST['page'])){
 		if(isset($_POST['next'])){
@@ -53,6 +53,13 @@ if(isset($_POST['search__city'])){
 	
 } else {
 	header("Location: index.php");
+}
+
+function validate($val){
+	if(   ($val=='')   ||   ($val==null)   ){
+		return true;//Empty or null
+	}
+	return false;//Not empty or null
 }?>
 
     <!-- <header class="masthead" style="background-image:url('assets/img/header-bg.gif');"> -->

@@ -12,6 +12,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+	<script type="text/javascript">
+	function validateSearchForm(){
+		
+		city = document.getElementById("search__city").value;
+		
+		if(city === ""){
+			alert("City is required.");
+			document.getElementById("search__city").focus();
+			return false;
+		} else {
+			return true;
+		}
+	}	
+	</script>
 </head>
 
 <body id="page-top">
@@ -33,10 +47,10 @@
                 <div class="intro-heading text-uppercase"><span style="font-family: 'Kaushan Script', cursive;">Find Grub!</span></div>
         <div class="row justify-content-center">
             <div class="col-lg-7">
-                <form action="searchresults.php" method="post" >
+                <form action="searchresults.php" method="post" onsubmit="return validateSearchForm()" >
                     <div class="form-group" id="city">
                         <!-- <label for="city">City</label> -->
-                        <input class="form-control" name="search__city" type="text" placeholder="Enter City">
+                        <input class="form-control" id="search__city" name="search__city" type="text" placeholder="Enter City">
                         <span class="show-error">
 						<!-- < echo $cityNameErr; ></span> -->
                     </div>

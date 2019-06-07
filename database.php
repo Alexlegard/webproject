@@ -5,7 +5,7 @@ class Database
 {
     //properties
     private static $user = 'root';
-    private static $pass = '';
+    private static $pass = 'root';
     private static $db = 'needgrub';
     private static $dsn = 'mysql:host=localhost;dbname=needgrub';
     private static $dbcon;

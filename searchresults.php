@@ -11,7 +11,7 @@ https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city&q=Ch
 <?php
 
 
-
+session_start();
 require_once 'includes/header.php';
 require_once 'Restaurants.php';
 

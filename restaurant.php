@@ -2,6 +2,7 @@
 //GOOGLE MAPS API KEY
 //AIzaSyAPcOg71QtU3scPX_jJSIKfqyBJvgrXtrI-->
 
+session_start();
 require_once "includes/header.php";
 require_once "Restaurants.php";
 require_once "database.php";
@@ -13,7 +14,6 @@ $comment = new Comment();
 if(isset($_POST['resid'])){
 	//echo 'resid is ' . $_POST['resid'];
 	$id = $_POST['resid'];
-	echo date('m/d/Y h:i:s');
 	
 	$restaurants = new Restaurants();
 	$restaurantdata = $restaurants->getRestaurantById($id);
@@ -32,7 +32,7 @@ if(isset($_POST['resid'])){
 //If comment submit form was sent
 if(isset($_POST['name'])){
 	
-	$name = $_POST['name'];
+	$name = $_SESSION['name'];
 	$content = $_POST['content'];
 	$emptyvalerror = false;
 	
@@ -76,7 +76,7 @@ function validate($val){
 	
 	<div id="result">
 		<!--<p>ID: <?php echo $id; ?></p>-->
-		<h1><p>Welcome to: <?php echo $restaurantdata['name']; ?></p></h1><hr>
+		<h1 id="restaurant-welcome">Welcome to: <?php echo $restaurantdata['name']; ?></h1><hr>
 		<img src="<?php echo $restaurantdata['featured_image']; ?>" width="700" height="auto">
 		<p>Address: <?php echo $restaurantdata['location']['address']; ?></p>
 		<!--<p>Lat: <?php echo $restaurantdata ['location']['latitude']; ?></p>
@@ -86,13 +86,13 @@ function validate($val){
 		<p>User rating: <?php echo $restaurantdata['user_rating']['aggregate_rating'] ?></p><hr>
 		
 	<div>
-	<a href="<?php echo $restaurantdata['url']; ?>"><h3>Click Here To Visit <?php echo $restaurantdata['name']; ?></h3></a>
+	<a id='affiliate-link' href="<?php echo $restaurantdata['url']; ?>"><h3>Click Here To Visit <?php echo $restaurantdata['name']; ?></h3></a>
 	</div>
 	
 	<div id"map"><?php
 	$directionsurl = "https://www.google.com/maps/dir//" . $latitude . "," . $longitude;
 	?></div>
-	<a href="<?php echo $directionsurl; ?>"><h4>Get Directions</h4></a>
+	<a id="directions-link" href="<?php echo $directionsurl; ?>"><h4>Get Directions</h4></a>
 	
 	<script type="text/javascript" src="map.js"></script>
 	
@@ -100,41 +100,40 @@ function validate($val){
 	
 	<script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyCGkcqoinVP-fb9qTDLA6y1Rizy3SLtmKo&callback=initializeMap">
 	</script>
-	</div>
+	
 	
 	<!----COMMENT FEATURE---->
 	<?php
 	//$db = Database::getDb();
 	$comments = $comment->getAllComments($db, $id);
-	echo '<h2>' . count($comments) . ' Comments</h2>';
+	echo '<h4 id="comments-header">' . count($comments) . ' Comments</h4>';
 	//Submit a comment
 	if(isset($emptyvalerror)){ 
 		echo '<div id="error" style="color:red;">' . $emptyvalerror . '</div>';
-	}?>
-	
+	} 
+	if(isset($_SESSION['name'])){
+	?>
 	<form action="restaurant.php" method="post">
 		<input type="hidden" name="resid" value="<?php echo $id; ?>">
 		<div>
-			<label for="name">Your name: </label>
-			<input type="text" name="name">
-		</div>
-		<div>
-			<label for="content">Your comment:</label>
+			<label for="content"><p>Your comment:</p></label>
 			<input type="text" name="content">
 		</div>
 		<div>
 			<input type="submit" name="submit" value="OK">
 		</div>
 	</form>
-	
 	<?php
+	} else {
+		echo '<p>Sign in to comment!</p>';
+	}
 	//List of comments
 	foreach($comments as $c){
 		echo '<div class="comment" style="border:1px solid black;">';
-		echo '<div class="comment__nametime">' .
-		$c->username . ' | ' . $c->comment_time . '</div>';
-		echo '<div class="comment__content">' . $c->comment_content;
-		echo '</div></div>';
+		echo '<div class="comment__nametime"><p>' .
+		$c->username . ' | ' . $c->comment_time . '</p></div>';
+		echo '<div class="comment__content"><p>' . $c->comment_content;
+		echo '</p></div></div>';
 	}
 	?>
 	</div>

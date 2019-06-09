@@ -10,13 +10,15 @@ if(isset($_POST['login'])){
     $db = Database::getDb();
     $getuser = $db->prepare("SELECT * FROM users WHERE email='$email' AND password='$password'");
     $getuser->execute();
-    $userDetail = $getuser->fetch();
-
+    $userDetail = $getuser->fetchAll();
+	
+	/*echo $userDetail[0][1] . " " . $userDetail[0][2];*/
+	
     if($getuser->rowCount() == 1) {
         session_start();
-        $_SESSION['role'] = $userDetail['role'];
-        $_SESSION['user_id'] = $userDetail['user_id'];
-        $_SESSION['name'] = $userDetail['first_name'].' '.$userDetail['last_name'] ;
+        /*$_SESSION['role'] = $userDetail['role'];*/
+        $_SESSION['user_id'] = $userDetail[0][0];
+        $_SESSION['name'] = $userDetail[0][1].' '.$userDetail[0][2] ;
 
         header("Location: index.php");
 

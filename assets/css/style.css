@@ -35,3 +35,25 @@ body {
 #result p{
     font-size: 20px;
 }
+/*Directions.php styles*/
+p {
+	color:black;
+}
+#affiliate-link, #directions-link {
+	color:blue;
+}
+#restaurant-welcome {
+	color:black;
+	margin-top:20px;
+}
+#comments-header {
+	color:black;
+	margin-top:20px;
+}
+#result {
+	padding-left:10%;
+	padding-right:10%;
+}
+.comment {
+	background-color:white;
+}

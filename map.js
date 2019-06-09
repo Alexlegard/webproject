@@ -19,6 +19,6 @@ function initializeMap(){
 			map: restaurantMap
 		}
 	);
-	var map = new google.maps.Map(document.getElementById('map'), {zoom: 16, center: restaurant});
+	var map = new google.maps.Map(document.getElementById('map'), {zoom: 18, center: restaurant});
 	var marker = new google.maps.Marker({ position:restaurant, map:map });
 }

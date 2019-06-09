@@ -67,10 +67,10 @@ function validate($val){
 	<body>
 	<div class="container">
 		<div class="row mb-4 mt-2">
-			<h1>Searching for Restaurants in <?php echo $city; ?></h1>
+			<h1>Searching for Restaurants in <?php echo $city; ?><br></h1>
 			
 			<!--Pagination-->
-			<form method="post" action="searchresults.php">
+			<form id="page" method="post" action="searchresults.php">
 				<?php echo "Page " . $page; ?>
 				<input type="hidden" name="search__city" value="<?php echo $city; ?>">
 				<input type="hidden" name="page" value="<?php echo $page; ?>">
@@ -91,18 +91,26 @@ function validate($val){
 			}
 			//echo 'Image url ' . $imageurl;
 			//<input type='image' src='../images/blanc.gif' width='596' height='35'     onFocus='form.submit' name='btn_opentextbox'/>
-			echo '<div class="col-lg-4 mb-2 line-content">';
+			echo '<div id="search" class="col-lg-6 mb-2 line-content">';
 			//echo '<p>' . $item['restaurant']['featured_image'];
-			echo '<form method="post" action="restaurant.php">';
+			echo '<div><form method="post" action="restaurant.php">';
 			echo '<input type="hidden" name="resid" value="' . $resid . '">';
-			echo '<label>' . $item['restaurant']['name'] . '</label><br>';
-			echo '<input type="image" src="'.$imageurl.'" width="200" height="auto" onFocus="submit" name="restaurant_img" value="ok">';
-			echo '</form></div>';
+			echo '<h4><label>' . $item['restaurant']['name'] . '</label><h4><br>';
+			echo '<input id="display" type="image" src="'.$imageurl.'" width="480" height=300" onFocus="submit" name="restaurant_img" value="ok"><br><br>';
+			echo '</form></div></div>';
 			
 		}
 		?>
 		
 		</div>
+		<!--Pagination-->
+		<form id="pageb" method="post" action="searchresults.php">
+				<?php echo "Page " . $page; ?>
+				<input type="hidden" name="search__city" value="<?php echo $city; ?>">
+				<input type="hidden" name="page" value="<?php echo $page; ?>">
+				<input type="submit" name="prev" value="Prev">
+				<input type="submit" name="next" value="Next">
+			</form>
     </div>
 	</body>
 </html>

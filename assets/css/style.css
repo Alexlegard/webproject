@@ -1,0 +1,37 @@
+body {
+    background: skyblue;
+}
+
+.bg-dark {
+    background-color: crimson!important;
+}
+#search {
+    
+    padding-top: 4em;
+    text-align: center;
+    color: crimson;
+    
+}
+
+#display {
+    border: 1px solid crimson;
+}
+
+#page {
+    padding-left: 11em;
+}
+
+#pageb {
+    padding-left: 57em;
+    margin: 1em;
+}
+
+#result {
+    text-align: center;
+    color: crimson;
+
+}
+
+#result p{
+    font-size: 20px;
+}

@@ -59,6 +59,7 @@ function validate($val){
 }
 ?>
 
+
 <body>
 	<!--
 	Some data we want to include:
@@ -73,31 +74,33 @@ function validate($val){
 	<div id="hidden__latitude" style="display:none"><?php echo $latitude; ?></div>
 	<div id="hidden__longitude" style="display:none"><?php echo $longitude; ?></div>
 	
-	<!--<p>ID: <?php echo $id; ?></p>-->
-	<p>Welcome to: <?php echo $restaurantdata['name']; ?></p>
-	<img src="<?php echo $restaurantdata['featured_image']; ?>" width="700" height="auto">
-	<p>Address: <?php echo $restaurantdata['location']['address']; ?></p>
-	<!--<p>Lat: <?php echo $restaurantdata ['location']['latitude']; ?></p>
-	<p>Lon: <?php echo $restaurantdata ['location']['longitude']; ?></p>-->
-	<p>Cuisine: <?php echo $restaurantdata['cuisines']; ?></p>
-	<p>Cost for two: <?php echo $restaurantdata['average_cost_for_two']; ?></p>
-	<p>User rating: <?php echo $restaurantdata['user_rating']['aggregate_rating'] ?></p>
-	
+	<div id="result">
+		<!--<p>ID: <?php echo $id; ?></p>-->
+		<h1><p>Welcome to: <?php echo $restaurantdata['name']; ?></p></h1><hr>
+		<img src="<?php echo $restaurantdata['featured_image']; ?>" width="700" height="auto">
+		<p>Address: <?php echo $restaurantdata['location']['address']; ?></p>
+		<!--<p>Lat: <?php echo $restaurantdata ['location']['latitude']; ?></p>
+		<p>Lon: <?php echo $restaurantdata ['location']['longitude']; ?></p>-->
+		<p>Cuisine: <?php echo $restaurantdata['cuisines']; ?></p>
+		<p>Cost for two: <?php echo $restaurantdata['average_cost_for_two']; ?></p>
+		<p>User rating: <?php echo $restaurantdata['user_rating']['aggregate_rating'] ?></p><hr>
+		
 	<div>
-	<a href="<?php echo $restaurantdata['url']; ?>">Link to <?php echo $restaurantdata['name']; ?></a>
+	<a href="<?php echo $restaurantdata['url']; ?>"><h3>Click Here To Visit <?php echo $restaurantdata['name']; ?></h3></a>
 	</div>
 	
-	<div><?php
+	<div id"map"><?php
 	$directionsurl = "https://www.google.com/maps/dir//" . $latitude . "," . $longitude;
 	?></div>
-	<a href="<?php echo $directionsurl; ?>">Get Directions</a>
+	<a href="<?php echo $directionsurl; ?>"><h4>Get Directions</h4></a>
 	
 	<script type="text/javascript" src="map.js"></script>
 	
-	<div id="map" style="width:500px;height:500px;"></div>
+	<div id="map" style="width:500px; height:500px; "></div>
 	
 	<script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyCGkcqoinVP-fb9qTDLA6y1Rizy3SLtmKo&callback=initializeMap">
 	</script>
+	</div>
 	
 	<!----COMMENT FEATURE---->
 	<?php
@@ -134,4 +137,5 @@ function validate($val){
 		echo '</div></div>';
 	}
 	?>
+	</div>
 </body>

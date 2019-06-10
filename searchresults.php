@@ -85,7 +85,8 @@ function validate($val){
 			$resid = $item['restaurant']['R']['res_id'];
 				
 			if($item['restaurant']['featured_image'] == ''){
-				$imageurl = '/assets/img/NotFound.jpg';
+				?><script>//alert("Inside if");</script><?php
+				$imageurl = 'assets/img/NotFound.jpg';
 			} else {
 				$imageurl = $item['restaurant']['featured_image'];
 			}

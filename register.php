@@ -93,13 +93,13 @@ $passErr = $confirmPassErr = $fNameErr = $lNameErr = $emailErr = $email = "";
 </head>
 
 <body id="page-top">
-    <header class="masthead" style="background-image:url('assets/img/header-bg.jpg');">
+    <header class="masthead" style="background-image:url('assets/img/food2.jpg');">
         <div class="container">
             <div class="intro-text" style="padding-top: 50px;padding-bottom: 50px;">
-                <div class="intro-heading text-uppercase"><span style="font-family: 'Kaushan Script', cursive;">Find grub!</span></div>
+                <div class="intro-heading text-uppercase"><span style="font-family: 'Kaushan Script', cursive;color: crimson; text-shadow: 0 0 30px skyblue;">Find grub!</span></div>
                 <div class="d-flex flex-column justify-content-center" id="login-box" style="background-color: #434141;">
                     <div class="login-box-header" style="background-color: #434141;">
-                        <h4 style="color: rgb(255,255,255);margin-bottom: 0px;font-weight: 400;font-size: 27px;"><img src="assets/img/fg.png" width="50%"></h4>
+                        <h4 style="color: rgb(255,255,255);margin-bottom: 0px;font-weight: 400;font-size: 27px;"><img src="assets/img/logo.png" width="50%"></h4>
                     </div>
 
                     <div class="d-flex flex-row align-items-center login-box-seperator-container">
@@ -147,11 +147,11 @@ $passErr = $confirmPassErr = $fNameErr = $lNameErr = $emailErr = $email = "";
                     </div>
 
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
+                        <div>
                             <button type="submit" name="register" class="btn btn-success">Register!</button>
                     
                     </div>        
-                    <div id="login-box-footer" style="padding:10px 20px;padding-bottom:23px;padding-top:18px;">
+                    <div id="login-box-footer" style="padding:10px 20px;padding-bottom:23px;padding-top:18px; margin: 14px;">
                         <p style="margin-bottom:0px;">Have an account?<a id="register-link" href="login.php">Sign In!</a></p>
                     </div>
                 </form>
@@ -162,7 +162,7 @@ $passErr = $confirmPassErr = $fNameErr = $lNameErr = $emailErr = $email = "";
             </div>
         </div>
     </header>
-    <footer>
+    <footer style="background: crimson; color: skyblue;">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-lg-12"><span class="copyright">Copyright&nbsp;© Find Grub 2019</span></div>

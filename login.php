@@ -48,29 +48,30 @@ if(isset($_POST['login'])){
 </head>
 
 <body id="page-top">
-    <header class="masthead" style="background-image:url('assets/img/header-bg.jpg');">
+    <header class="masthead" style="background-image:url('assets/img/food.jpg');">
         <div class="container">
-            <div class="intro-text" style="padding-top: 50px;padding-bottom: 50px;">
-                <div class="intro-heading text-uppercase"><span style="font-family: 'Kaushan Script', cursive;">Find Grub!</span></div>
+            <div class="intro-text" style="padding-top: 50px;padding-bottom: 50px; " >
+                <div class="intro-heading text-uppercase"><span style="font-family: 'Kaushan Script', cursive; color: crimson; text-shadow: 0 0 30px skyblue;">Find Grub!</span></div>
                 <div class="d-flex flex-column justify-content-center" id="login-box" style="background-color: #434141;">
                     <div class="login-box-header" style="background-color: #434141;">
-                        <h4 style="color: rgb(255,255,255);margin-bottom: 0px;font-weight: 400;font-size: 27px;"><img src="assets/img/fg.png" width="50%"></h4>
+                        <h4 style="color: rgb(255,255,255);margin-bottom: 0px;font-weight: 400;font-size: 27px;"><img src="assets/img/logo.png" width="50%"></h4>
                     </div>
                     <div class="login-box-content" style="background-color: #434141;">
-                        <div class="fb-login box-shadow"><a class="d-flex flex-row align-items-center social-login-link" href="#"><i class="fa fa-facebook" style="margin-left:0px;padding-right:20px;padding-left:22px;width:56px;"></i>Login with Facebook</a></div>
+                        <!-- <div class="fb-login box-shadow"><a class="d-flex flex-row align-items-center social-login-link" href="#"><i class="fa fa-facebook" style="margin-left:0px;padding-right:20px;padding-left:22px;width:56px;"></i>Login with Facebook</a></div>
                         <div class="gp-login box-shadow"><a class="d-flex flex-row align-items-center social-login-link" style="margin-bottom:10px;" href="#"><i class="fa fa-google" style="color:rgb(255,255,255);width:56px;"></i>Login with Google+</a></div>
                         <div class="gp-login box-shadow"
-                            style="background-color: #3e6c92;"><a class="d-flex flex-row align-items-center social-login-link" style="margin-bottom:10px;" href="#"><i class="fa fa-instagram" style="color:rgb(255,255,255);width:56px;"></i>Login with Instagram</a></div>
+                            style="background-color: #3e6c92;"><a class="d-flex flex-row align-items-center social-login-link" style="margin-bottom:10px;" href="#"><i class="fa fa-instagram" style="color:rgb(255,255,255);width:56px;"></i>Login with Instagram</a></div> -->
                     </div>
-                    <div class="d-flex flex-row align-items-center login-box-seperator-container">
+                    <!-- <div class="d-flex flex-row align-items-center login-box-seperator-container">
                         <div class="login-box-seperator"></div>
                         <div class="login-box-seperator-text">
                             <p style="margin-bottom:0px;padding-left:10px;padding-right:10px;font-weight:400;color:rgb(201,201,201);">or</p>
                         </div>
                         <div class="login-box-seperator"></div>
-                    </div>
+                    </div> -->
                     <div id="main" class="row justify-content-center">
             <div class="col-lg-7">
+            <h3>Login Here</h3>
                 <form action="" method="post">
 
                     <div class="form-group">
@@ -84,7 +85,7 @@ if(isset($_POST['login'])){
                     </div>
 
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
+                        <div>
                             <button type="submit" name="login" class="btn btn-success">Login</button>
                         </div>
                     </div>
@@ -97,18 +98,18 @@ if(isset($_POST['login'])){
             </div>
         </div>
         </div>
-    </header>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-lg-12"><span class="copyright">Copyright&nbsp;© Find Grub 2019</span></div>
+        </header>
+        <footer style="background: crimson; color: skyblue;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-lg-12"><span class="copyright">Copyright&nbsp;© Find Grub 2019</span></div>
+                </div>
             </div>
-        </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
-</body>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="assets/js/script.min.js"></script>
+    </body>
 
-</html>
+    </html>

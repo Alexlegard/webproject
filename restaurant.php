@@ -125,7 +125,7 @@ function validate($val){
 	</form>
 	<?php
 	} else {
-		echo '<p>Sign in to comment!</p>';
+		echo '<p><a href="login.php">Sign in to comment!</a></p>';
 	}
 	//List of comments
 	foreach($comments as $c){
@@ -137,4 +137,5 @@ function validate($val){
 	}
 	?>
 	</div>
-</body>
+	<?php
+require_once "includes/footer.php";

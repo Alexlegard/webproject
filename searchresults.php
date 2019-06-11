@@ -49,6 +49,9 @@ if(isset($_POST['search__city'])){
 	$searchquery = $restaurants->getDebugSearchQuery($entityid, $nr, $page);//Debug
 	$searchdata = $restaurants->getSearchData($entityid, $nr, $page, $query);
 	$searchdata = json_decode($searchdata, true);
+	$results_found = $searchdata['results_found'];
+	$results_start = $searchdata['results_start'];
+	$results_shown = $searchdata['results_shown'];
 	$searchdata = $searchdata['restaurants'];
 	
 } else {
@@ -70,13 +73,29 @@ function validate($val){
 			<h1>Searching for Restaurants in <?php echo $city; ?><br></h1>
 			
 			<!--Pagination-->
+			<?php
+				if($results_shown == 0 && $results_found == 0)
+				{
+			?>
+			<h2>No Results found matching your criteria.</h2>
+		<?php } ?>
+
+		<?php 
+			if (! $results_found < ($results_shown + $results_start)) {
+		?>
 			<form id="page" method="post" action="searchresults.php">
 				<?php echo "Page " . $page; ?>
 				<input type="hidden" name="search__city" value="<?php echo $city; ?>">
+				<input type="hidden" name="search__query" value="<?php echo $query; ?>">
 				<input type="hidden" name="page" value="<?php echo $page; ?>">
 				<input type="submit" name="prev" value="Prev">
 				<input type="submit" name="next" value="Next">
 			</form>
+		
+		<?php 
+			}
+		?>
+		<?php ?>
 		
 		<?php
 		
@@ -103,14 +122,21 @@ function validate($val){
 		?>
 		
 		</div>
+		</div>
+				<?php 
+			if (! $results_found < ($results_shown + $results_start)) {
+		?>
 		<!--Pagination-->
 		<form id="pageb" method="post" action="searchresults.php">
 				<?php echo "Page " . $page; ?>
 				<input type="hidden" name="search__city" value="<?php echo $city; ?>">
+				<input type="hidden" name="search__query" value="<?php echo $query; ?>">
 				<input type="hidden" name="page" value="<?php echo $page; ?>">
 				<input type="submit" name="prev" value="Prev">
 				<input type="submit" name="next" value="Next">
 			</form>
+
+		<?php }?>
     </div>
 	</body>
 </html>

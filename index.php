@@ -32,9 +32,16 @@ function validateSearchForm(){
                     </div>
                     <div class="form-group" id="city">
                         <!-- <label for="restaurant">Restaurants</label> -->
-                        <input class="form-control" name="search__query" type="text" placeholder="I want.....">
+                        <!--<input class="form-control" name="search__query" type="text" placeholder="I want.....">-->
+                        <label for="search__query" class="form-control">Select Cuisine</label>
+                        <select name="search__query" >
+                            <option value="indian">Indian</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="mexican">Mexican</option>
+                        </select> 
+                        
                         <span class="show-error">
-						<!-- < echo $restaurantErr; ?></span> -->
+						<!--< echo $restaurantErr; ?></span>-->
                     </div>
                     <div class="form-group">
                         <div>

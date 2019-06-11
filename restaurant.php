@@ -44,7 +44,6 @@ if(isset($_POST['content'])){
 	} else {
 		//Add the comment to the db
 		//restaurant id: $id
-		echo 'name and content are set.';
 		$name = $_SESSION['name'];
 		$content = $_POST['content'];
 		$count = $comment->addComment($db, $id, $name, $content);

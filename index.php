@@ -38,6 +38,8 @@ function validateSearchForm(){
                             <option value="indian">Indian</option>
                             <option value="chinese">Chinese</option>
                             <option value="mexican">Mexican</option>
+                            <option value="african">African</option>
+                            
                         </select> 
                         
                         <span class="show-error">

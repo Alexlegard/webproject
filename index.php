@@ -34,12 +34,13 @@ function validateSearchForm(){
                         <!-- <label for="restaurant">Restaurants</label> -->
                         <!--<input class="form-control" name="search__query" type="text" placeholder="I want.....">-->
                         <label for="search__query" class="form-control">Select Cuisine</label>
-                        <select name="search__query" >
+                        <select name="search__query">
+                        	<option value="" selected disabled hidden>Choose here</option>
                             <option value="indian">Indian</option>
                             <option value="chinese">Chinese</option>
                             <option value="mexican">Mexican</option>
                             <option value="african">African</option>
-                            
+
                         </select> 
                         
                         <span class="show-error">

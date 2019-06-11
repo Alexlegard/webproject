@@ -118,9 +118,7 @@ function validate($val){
 		<div>
 			<label for="content"><p>Your comment:</p></label>
 			<input type="text" name="content">
-		</div>
-		<div>
-			<input type="submit" name="submit" value="OK">
+		<input type="submit" name="submit" value="OK">
 		</div>
 	</form>
 	<?php

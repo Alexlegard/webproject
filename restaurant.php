@@ -30,21 +30,22 @@ if(isset($_POST['resid'])){
 }
 
 //If comment submit form was sent
-if(isset($_POST['name'])){
+if(isset($_POST['content'])){
 	
 	$name = $_SESSION['name'];
 	$content = $_POST['content'];
 	$emptyvalerror = false;
 	
 	//Make sure name and content are not empty or null
-	if(validate($_POST['name'])){
+	if(validate($_SESSION['name'])){
 		$emptyvalerror = 'Name is required.';
 	} else if(validate($_POST['content'])) {
 		$emptyvalerror = 'Content is required.';
 	} else {
 		//Add the comment to the db
 		//restaurant id: $id
-		$name = $_POST['name'];
+		echo 'name and content are set.';
+		$name = $_SESSION['name'];
 		$content = $_POST['content'];
 		$count = $comment->addComment($db, $id, $name, $content);
 		
@@ -106,6 +107,7 @@ function validate($val){
 	<?php
 	//$db = Database::getDb();
 	$comments = $comment->getAllComments($db, $id);
+	//var_dump($comments);
 	echo '<h4 id="comments-header">' . count($comments) . ' Comments</h4>';
 	//Submit a comment
 	if(isset($emptyvalerror)){ 

@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `needgrub`
 --
+CREATE DATABASE IF NOT EXISTS `needgrub` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `needgrub`;
 
 -- --------------------------------------------------------
 
